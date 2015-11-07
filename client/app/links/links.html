@@ -1,3 +1,26 @@
-<div id='container'>
+<div class='navigation'>
+  <ul>
+    <li><a href='#/links'>Links</a></li>
+    <li><a href='#/shorten'>Shorten</a></li>
+    <li><a href='#/logout'>Logout</a></li>
+  </ul>
+</div>
+
+
+<div id='container' ng-controller="LinksController">
+  <input type="text" ng-model="search" placeholder="search">
   <!-- Your html here -->
+  <h3 ng-if="!data.links.length">No links shortened</h3>
+  <div ng-repeat="link in data.links | filter: search | orderBy: '-visits'" class="links">
+    <img src='/assets/redirect_icon.png'/>
+    <div class="visits">
+    <span class="count ng-binding">{{ link.visits }}</span>
+      Visits
+     </div>
+     <div class="title ng-binding">
+      {{ link.title }}
+     </div>
+     <div class='original ng-binding'>{{ link.url }}</div>
+     <a href="{{ link.base_url }}/api/links/{{ link.code }}"> {{ link.base_url }}/api/links/{{ link.code }}</a>
+  </div>
 </div>

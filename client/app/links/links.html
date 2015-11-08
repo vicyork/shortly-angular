@@ -8,10 +8,13 @@
 
 
 <div id='container' ng-controller="LinksController">
+
   <input type="text" ng-model="search" placeholder="search">
+
   <!-- Your html here -->
   <h3 ng-if="!data.links.length">No links shortened</h3>
-  <div ng-repeat="link in data.links | filter: search | orderBy: '-visits'" class="links">
+  <div ng-repeat="link in data.links | filter: search | orderBy: '-visits'"
+       class="links">
     <img src='/assets/redirect_icon.png'/>
     <div class="visits">
     <span class="count ng-binding">{{ link.visits }}</span>
@@ -24,3 +27,37 @@
      <a href="{{ link.base_url }}/api/links/{{ link.code }}"> {{ link.base_url }}/api/links/{{ link.code }}</a>
   </div>
 </div>
+
+
+<!--Solution Code-->
+
+
+<!--
+<div id='container'>
+  &lt;!&ndash; Your html here &ndash;&gt;
+
+  <nav class="navigation">
+    <ul>
+      <li><a class="selected" href="#/links">Links</a></li>
+       <li><a href="#/shorten">Shorten</a></li>
+    </ul>
+  </nav>
+</div>
+
+<input type='text' ng-model='search' placeholder='filter'/>
+
+<div class="links">
+  <div class="link"
+       ng-repeat="link in data.links | filter:search | orderBy:'created_at'">
+    <img src="assets/redirect_icon.png">
+    <div class="info">
+      <div class="visits">
+        <span class="count">{{ link.visits }}</span>Visits
+      </div>
+      <div class="title">{{ link.title }}</div>
+      <div class="original">{{ link.url }}</div>
+      <a href="http://localhost:8000/api/links/{{ link.code }}">{{ link.base_url }}/{{ link.code }}</a>
+    </div>
+  </div>
+</div>
+-->

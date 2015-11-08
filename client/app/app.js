@@ -18,18 +18,24 @@ angular.module('shortly', [
       // Your code here
       .when('/links', {
         templateUrl: 'app/links/links.html',
-        controller: 'LinksController'
+        controller: 'LinksController',
+        authenticate: true
       })
       .when('/shorten', {
         templateUrl: 'app/shorten/shorten.html',
-        controller: 'ShortenController'
+        controller: 'ShortenController',
+        authenticate: true
       })
+      // solution didn't include a logout redirect.
       .when('/logout', {
         redirectTo: '/signin'
       })
-      .when('/', {
+      // Solution uses .otherwise, we used .when initially
+      .otherwise({
         redirectTo: '/signin'
       });
+
+
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');

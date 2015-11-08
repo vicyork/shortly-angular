@@ -1,10 +1,11 @@
 // Karma configuration
 // Generated on Mon Jun 30 2014 19:35:20 GMT-0700 (PDT)
 
-module.exports = function(config) {
+module.exports = function(config){
   config.set({
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
+    // base path that will be used to resolve all patterns (eg. files,
+    // exclude)
     basePath: './',
 
 
@@ -31,21 +32,20 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-        'karma.conf.js'
+      'karma.conf.js'
     ],
 
 
     // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-
-    },
+    // available preprocessors:
+    // https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {},
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['nyan','unicorn'],
+    reporters: ['nyan', 'unicorn'],
 
 
     // web server port
@@ -57,17 +57,20 @@ module.exports = function(config) {
 
 
     // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR ||
+    // config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
+    // enable / disable watching file and executing tests whenever any
+    // file changes
     autoWatch: false,
 
 
     // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    // available browser launchers:
+    // https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['~/Application/Chrome', 'PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
